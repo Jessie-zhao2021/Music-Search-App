@@ -55,18 +55,23 @@ function LikedAlbum(id){
 function RenderlikedAlbums(){
 
     const likedAlbums = JSON.parse(localStorage.getItem('liked-albums')) || [];
+    console.log('likedAlbums:',likedAlbums)
     return(
-        <div className='likeAlbums'>
-          {
-            likedAlbums.map( (id) => (
-                <div>
-                    {LikedAlbum(id) }
-                </div>
-            ))  
-          }
+        <>
+            {likedAlbums.length === 0 ? <div className='likeAlbums-p'>There is nothing... <br/>Please Add your Favorite music!</div> : ""}
+            <div className='likeAlbums'>
             
-        </div>
-       
+            {
+                likedAlbums.map( (id) => (
+                    <div>
+                        {LikedAlbum(id) }
+                    </div>
+                ))  
+            }
+                
+            </div>
+            {likedAlbums.length < 7 ? <div ><br/><br/></div> : ""}
+        </>
     )
      
 };

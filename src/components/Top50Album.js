@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import {useNavigate} from 'react-router-dom';
 import { GetTop50Album } from '../api/apis';
-
+import AlbumFace from './AlbumFace';
 function Top50Album(){
 
     const [ Top50Album, setTop50Album ]   = useState( [] );
@@ -34,21 +34,22 @@ function Top50Album(){
             <p className='loading-content'>Loading results...</p>
             :
             Top50Album.map( m => (
-                <div className='album' key={m.idAlbum}>             
-                <img 
-                    className='poster'
-                    src={m.strAlbumThumb ? m.strAlbumThumb : 'https://www.publicdomainpictures.net/pictures/330000/velka/image-1586763209WNr.jpg'}
-                    alt={m.strAlbum} 
-                    // key={m.id}
-                    onClick={ () => navigateTo(`/album/${m.idAlbum}`) }
-                /> 
+                // <div className='album' key={m.idAlbum}>             
+                // <img 
+                //     className='poster'
+                //     src={m.strAlbumThumb ? m.strAlbumThumb : 'https://www.publicdomainpictures.net/pictures/330000/velka/image-1586763209WNr.jpg'}
+                //     alt={m.strAlbum} 
+                //     // key={m.id}
+                //     onClick={ () => navigateTo(`/album/${m.idAlbum}`) }
+                // /> 
                 
-                <div className="album-lable" >
-                    { m.strAlbum } ({ m.intYearReleased })<br/>
-                    <p>{ m.strArtist }</p>
+                // <div className="album-lable" >
+                //     { m.strAlbum } ({ m.intYearReleased })<br/>
+                //     <p>{ m.strArtist }</p>
 
-                </div>
-                </div>
+                // </div>
+                // </div>
+                <AlbumFace album={m} />
             )
             )
             }

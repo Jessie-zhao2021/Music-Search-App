@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo } from 'react';
+import { useState, useEffect } from 'react';
 import {useNavigate} from 'react-router-dom';
 import {GetCurrentTrendingAlbum} from '../api/apis'
 import whiteHeart from '../img/whiteHeart.png';
@@ -35,7 +35,7 @@ function CurrentTrendingAlbum(props){
             {
             loading 
             ?
-            <p>Loading results...</p>
+            <p>Loading trending albums...</p>
             :
             CurrentTrendingAlbum.map( m => (
                 // <div className='trending-album-item' key={m.idAlbum}>             
@@ -67,8 +67,8 @@ function CurrentTrendingAlbum(props){
 
 };
 
-function AlbumFace({album}) {
-    const m = album;
+export function AlbumFace({album}) {
+
     const navigateTo = useNavigate();
     const [ like, setLike] = useState( false );
     const likedAlbums = JSON.parse(localStorage.getItem('liked-albums')) || [];
@@ -82,20 +82,20 @@ function AlbumFace({album}) {
     };
 
     return (        
-        <div className='trending-album-item' key={m.idAlbum}>             
+        <div className='trending-album-item' key={album.idAlbum}>             
             <img 
                 className='poster'
-                src={m.strAlbumThumb ? m.strAlbumThumb : 'https://www.publicdomainpictures.net/pictures/330000/velka/image-1586763209WNr.jpg'}
-                alt={m.strAlbum} 
-                onClick={ () => navigateTo(`/album/${m.idAlbum}`)}
+                src={album.strAlbumThumb ? album.strAlbumThumb : 'https://www.publicdomainpictures.net/pictures/330000/velka/image-1586763209WNr.jpg'}
+                alt={album.strAlbum} 
+                onClick={ () => navigateTo(`/album/${album.idAlbum}`)}
             /> 
             
             <div className="album-lable" >
-                <div onClick={ () => navigateTo(`/album/${m.idAlbum}`)}>{ m.strAlbum }( { m.strCountry.toUpperCase() } )</div>
+                <div onClick={ () => navigateTo(`/album/${album.idAlbum}`)}>{ album.strAlbum }( { album.strCountry ? album.strCountry.toUpperCase() : album.intYearReleased } )</div>
                 <div className='artist-like'>
-                    { m.strArtist }
+                    { album.strArtist }
                     <span>
-                        <img key={m.idAlbum} className="likeBtn" onClick={()=>{onLikeClick(m.idAlbum)}} src={like ? redHeart : whiteHeart} alt='red heart'/>
+                        <img key={album.idAlbum} className="likeBtn" onClick={()=>{onLikeClick(album.idAlbum)}} src={like ? redHeart : whiteHeart} alt='red heart'/>
                     </span>
                 </div>
             </div>  

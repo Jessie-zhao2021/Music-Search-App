@@ -1,6 +1,7 @@
 import { useParams, useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { SearchAlbum } from '../api/apis';
+import AlbumFace from './AlbumFace';
 
 
 function SearchResults(){
@@ -41,21 +42,21 @@ function SearchResults(){
           <p>Loading results...</p>
           :
           results.map( m => (
-            <div className='album' key={m.idAlbum}>             
-              <img 
-                className='poster'
-                src={m.strAlbumThumb ? m.strAlbumThumb : 'https://avatar.amuniversal.com/user_avatars/avatars_gocomicsver3/3015000/3015243/No-Photo-Available.jpg'}
-                alt={m.strAlbum} 
-                // key={m.id}
-                onClick={ () => navigateTo(`/album/${m.idAlbum}`) }
-              /> 
+            // <div className='album' key={m.idAlbum}>             
+            //   <img 
+            //     className='poster'
+            //     src={m.strAlbumThumb ? m.strAlbumThumb : 'https://avatar.amuniversal.com/user_avatars/avatars_gocomicsver3/3015000/3015243/No-Photo-Available.jpg'}
+            //     alt={m.strAlbum} 
+            //     onClick={ () => navigateTo(`/album/${m.idAlbum}`) }
+            //   /> 
              
-              <div className="album-lable" onClick={ () => navigateTo(`/album/${m.idAlbum}`)}>
-                    { m.strAlbum } ({ m.intYearReleased })<br/>
-                    <p>{ m.strArtist }</p>
+            //   <div className="album-lable" onClick={ () => navigateTo(`/album/${m.idAlbum}`)}>
+            //         { m.strAlbum } ({ m.intYearReleased })<br/>
+            //         <p>{ m.strArtist }</p>
 
-              </div>
-            </div>
+            //   </div>
+            // </div>
+            <AlbumFace album={m} />
           )
         )
         }
