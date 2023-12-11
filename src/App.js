@@ -7,6 +7,7 @@ import Top50Tracks from './components/Top50Tracks';
 import TrackDetails from './components/TrackDetails';
 import Top50Album from './components/Top50Album';
 import RenderlikedAlbums from './components/FavoriteAlbum';
+import About from './components/About';
 import './App.css';
 
 
@@ -24,7 +25,7 @@ function App(){
             <Link to="/Top50Album" className='menu-item'>Top Album</Link>
             <Link to="/Top50Tracks" className='menu-item'>Top Tracks</Link>
             <Link to="/FavoriteAlbum" className='menu-item'>My Favorite</Link>
-            <Link to="/" className='menu-item'>About</Link>
+            <Link to="/about" className='menu-item'>About</Link>
           </div>
 
         </nav>
@@ -44,6 +45,8 @@ function App(){
           <Route path='/Top50Tracks' element = { <Top50Tracks /> }/>
 
           <Route path="/track/:id" element = { <TrackDetails />}/>
+
+          <Route path="/about" element = { <About />}/>
         
         </Routes>
       
