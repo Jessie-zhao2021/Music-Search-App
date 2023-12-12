@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import {GetCurrentTrendingAlbum} from '../api/apis'
-import { ClearLikedAlbums } from '../api/album';
 import AlbumFace from './AlbumFace';
+import { getLikedAlbumIds } from '../api/likeAlbum';
 
 
 function CurrentTrendingAlbum(props){
@@ -12,8 +12,13 @@ function CurrentTrendingAlbum(props){
     console.log(props);
   
     useEffect(() => {
-        ClearLikedAlbums();
+        const likedAlbumIds = getLikedAlbumIds();
         GetCurrentTrendingAlbum( props.country, (data) => {
+            data.forEach(m => {
+                if (likedAlbumIds.includes(m.idAlbum)) {
+                    m['liked'] = true;
+                }
+            });
             setCurrentTrendingAlbum(data);
             setLoading( false ); 
         }, (err) => {
@@ -26,18 +31,14 @@ function CurrentTrendingAlbum(props){
         return <strong>There was loading your results. Please try again later.</strong>;
     }
 
+    if (loading) {
+        return <p>Loading trending albums...</p>;
+    }
+
     return (
-        <>
-            <div className='trending-album'>
-            {
-            loading 
-            ?
-            <p>Loading trending albums...</p>
-            :
-            CurrentTrendingAlbum.map( m => ( <AlbumFace album={m} /> ))
-            }
-            </div>
-        </>
+        <div className='trending-album'>
+            { CurrentTrendingAlbum.map( m => ( <AlbumFace album={m} /> )) }
+        </div>
     )
 };
 

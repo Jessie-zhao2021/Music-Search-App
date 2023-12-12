@@ -2,18 +2,18 @@ import { useState} from 'react';
 import { useNavigate } from 'react-router-dom';
 import whiteHeart from '../img/whiteHeart.png';
 import redHeart from '../img/redHeart.png';
-import { SetLikeAlbum } from '../api/album';
+import { likeAlbum } from '../api/likeAlbum';
 
 export default function AlbumFace({album}) {
 
     const navigateTo = useNavigate();
-    const [ like, setLike] = useState( false );
+    const [ like, setLike] = useState( album.liked ?? false );
     const likedAlbums = JSON.parse(localStorage.getItem('liked-albums')) || [];
 
     console.log(likedAlbums);
 
     const onLikeClick = (albumId)=>{
-        SetLikeAlbum(albumId, !like);
+        likeAlbum(albumId, !like);
         setLike(!like);
     };
 
@@ -38,5 +38,4 @@ export default function AlbumFace({album}) {
          
         </div>
     );
-
 }

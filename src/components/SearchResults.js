@@ -2,9 +2,9 @@ import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { SearchAlbum } from '../api/apis';
 import AlbumFace from './AlbumFace';
+import { getLikedAlbumIds } from '../api/likeAlbum';
 
-
-function SearchResults(){
+function SearchResults() {
 
   const params = useParams();
 
@@ -13,7 +13,14 @@ function SearchResults(){
   const [ error, setError ]     = useState( null );
 
   useEffect( () => {
+    const likedAlbumIds = getLikedAlbumIds();
+    
     SearchAlbum( params.query, (data) => {
+        data.album.forEach(m => {
+            if (likedAlbumIds.includes(m.idAlbum)) {
+                m['liked'] = true;
+            }
+        });
         setResults( data.album );
         setLoading( false ); 
       }, (err)=>{

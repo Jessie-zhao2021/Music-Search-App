@@ -2,8 +2,9 @@ import { useState, useEffect } from 'react';
 import {useNavigate} from 'react-router-dom';
 import { GetTop50Album } from '../api/apis';
 import AlbumFace from './AlbumFace';
-function Top50Album(){
+import { getLikedAlbumIds } from '../api/likeAlbum';
 
+function Top50Album() {
     const [ Top50Album, setTop50Album ]   = useState( [] );
     const [ loading, setLoading ] = useState( true );
     const [ error, setError ]     = useState( null );
@@ -11,7 +12,13 @@ function Top50Album(){
 
   
     useEffect( () => {
+      const likedAlbumIds = getLikedAlbumIds();
       GetTop50Album((data) => {
+        data.forEach(m => {
+            if (likedAlbumIds.includes(m.idAlbum)) {
+                m['liked'] = true;
+            }
+        });
         setTop50Album( data );
         setLoading( false ); 
       }, (err) => {
