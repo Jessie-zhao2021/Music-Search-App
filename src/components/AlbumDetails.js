@@ -46,8 +46,7 @@ function AlbumDetails(){
         <h4>Album Description: </h4>
         <p>{ music.strDescriptionEN }</p>
         
-      </div>
-      
+      </div>    
     )
   }
 

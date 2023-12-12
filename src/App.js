@@ -1,5 +1,5 @@
 
-import { Route, Routes, useParams, HashRouter as Router, Link } from 'react-router-dom';
+import { Route, Routes, HashRouter as Router, Link } from 'react-router-dom';
 import SearchForm from './components/SearchForm';
 import SearchResults from './components/SearchResults';
 import AlbumDetails from './components/AlbumDetails';

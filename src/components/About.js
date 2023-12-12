@@ -17,15 +17,6 @@ export default function About(){
             <p>Address: 123 Music Street, Melbourne, VIC 3000, Australia</p>
             <p>Telephone: +61 3 1234 5678</p>
             <p>Email: info@musicsearch.com</p>
-        
-            {/* <iframe
-            width="600"
-            height="450"
-            frameborder="0" style="border:0"
-            src="https://www.google.com/maps/embed/v1/place?q=123%20Music%20Street%2C%20Melbourne%2C%20VIC%203000%2C%20Australia&key=YOUR_API_KEY" allowfullscreen>
-            </iframe> */}
-        {/* <!-- Replace YOUR_API_KEY with your actual Google Maps API key --> */}
-      </div>
-      
+      </div>  
     )
 }

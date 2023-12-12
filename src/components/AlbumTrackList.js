@@ -1,5 +1,5 @@
 
-import { useParams, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { GetAlbumTrackList } from '../api/apis'
 
@@ -32,15 +32,20 @@ function AlbumTrackList( props ){
         )
     })
 
+    if(loading) {
+        return (<p className='loading-content'>loading...</p>);
+      }
+  
+    if (error) {
+        return (<p>error, please try again...</p>);
+      }
+
     return(
         <div>
-
             <h4>Album track </h4>
             <div className='track-ul'>
                 {Tracks}    
             </div>
-            
-
         </div>
     )
 };

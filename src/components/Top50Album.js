@@ -31,27 +31,9 @@ function Top50Album(){
             {
             loading 
             ?
-            <p className='loading-content'>Loading results...</p>
+            <p className='loading-content'>Loading albums...</p>
             :
-            Top50Album.map( m => (
-                // <div className='album' key={m.idAlbum}>             
-                // <img 
-                //     className='poster'
-                //     src={m.strAlbumThumb ? m.strAlbumThumb : 'https://www.publicdomainpictures.net/pictures/330000/velka/image-1586763209WNr.jpg'}
-                //     alt={m.strAlbum} 
-                //     // key={m.id}
-                //     onClick={ () => navigateTo(`/album/${m.idAlbum}`) }
-                // /> 
-                
-                // <div className="album-lable" >
-                //     { m.strAlbum } ({ m.intYearReleased })<br/>
-                //     <p>{ m.strArtist }</p>
-
-                // </div>
-                // </div>
-                <AlbumFace album={m} />
-            )
-            )
+            Top50Album.map( m => ( <AlbumFace album={m} /> ) )
             }
           </div>
       </div>

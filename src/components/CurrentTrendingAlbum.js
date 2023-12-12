@@ -1,9 +1,5 @@
 import { useState, useEffect } from 'react';
-// import {useNavigate} from 'react-router-dom';
 import {GetCurrentTrendingAlbum} from '../api/apis'
-// import whiteHeart from '../img/whiteHeart.png';
-// import redHeart from '../img/redHeart.png';
-// import { SetLikeAlbum } from '../api/album';
 import { ClearLikedAlbums } from '../api/album';
 import AlbumFace from './AlbumFace';
 

@@ -1,5 +1,5 @@
 import { useState} from 'react';
-import {useNavigate} from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import whiteHeart from '../img/whiteHeart.png';
 import redHeart from '../img/redHeart.png';
 import { SetLikeAlbum } from '../api/album';

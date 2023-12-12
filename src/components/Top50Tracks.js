@@ -25,12 +25,11 @@ function Top50Tracks(){
 
     return (
         <div>
-          {/* <div className='top50album-p'>Top Tracks   </div>  */}
           <div className='results'>
             {
               loading 
               ?
-              <p className='loading-content'>Loading Top 50 Tracks...</p>
+              <p className='loading-content'>Loading Tracks...</p>
               :
               top50Tracks.map( t => (
                 <div className='album'>             

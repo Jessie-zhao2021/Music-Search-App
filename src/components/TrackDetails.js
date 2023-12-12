@@ -33,6 +33,10 @@ function TrackDetails(){
         return <strong>There was loading your results. Please try again later.</strong>;
     }
 
+    if(loading) {
+        return (<p className='loading-content'>loading...</p>);
+    }
+
     return (
         <div>
             <div className="track-detail-vedio">
@@ -41,7 +45,7 @@ function TrackDetails(){
                     'https://www.publicdomainpictures.net/pictures/330000/velka/image-1586763209WNr.jpg'} 
                     alt={track.strTrack} />
 
-                {track.strMusicVid ? <ReactPlayer max-width={550} height={400} url={track.strMusicVid} /> : ""}    
+                {track.strMusicVid ? <ReactPlayer max-width={550} height={400} url={track.strMusicVid} /> : <img src='https://th.bing.com/th/id/OIP.asGyMiyTj7TIZ5tch6bK6QHaEK?rs=1&pid=ImgDetMain'/>}    
             </div>
             <div className='track-detail-info'>
                 {/* {track.strTrack3DCase ? <img src={track.strTrack3DCase} alt={track.strTrack} /> : ""} */}
