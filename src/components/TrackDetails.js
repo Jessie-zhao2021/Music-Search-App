@@ -54,15 +54,20 @@ function TrackDetails(){
                         <br/> Genre: {track.strGenre} <br/>
                         <br/> TotalListeners:  {track.intTotalListeners} <br/>
                         <br/> Vedio Director: {track.strMusicVidDirector} <br/>
-                        <br/> Vedio: <a href={track.strMusicVid} >{track.strMusicVid}</a> <br/> <br/>                      
+                        <br/> Vedio: <a className="track-link" href={track.strMusicVid} >{track.strMusicVid}</a> <br/> <br/>                      
                     </h4>
                 </div>
                             
-                <div className='track-detail-info-right'>
-                    <h3>Description:</h3> <br />
-                    {track.strDescriptionEN} 
-                    <br />
-                </div>
+                { track.strDescriptionEN !== null ? 
+                    <div className='track-detail-info-right'>
+                        <h3>Description:</h3> <br />
+                        {track.strDescriptionEN} 
+                        <br />
+                    </div>
+                    :
+                    ""
+                }
+
             </div>  
         </div>
     )

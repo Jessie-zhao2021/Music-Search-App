@@ -1,70 +1,46 @@
-# Getting Started with Create React App
+# Music Search Website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
+The Music Search website provides an extensive platform for music exploration, utilizing the free music API from TheAudioDB. Users can search for albums and tracks based on an artist's name, explore detailed music information, and enjoy trending and top-rated content from various countries. The design incorporates a bright, transparent interface with a pink-blue color scheme, creating an engaging user experience.
 
-## Available Scripts
+## Key Features
+- **Artist-Based Search**: Enables users to explore albums and tracks using an artist's name.
+- **Trending and Top Music**: Displays trending albums and tracks based on selected countries.
+- **Favorites**: Allows users to add their favorite albums and, soon, favorite tracks.
+- **Detailed Information**: Provides comprehensive details about music, artists, and albums.
+- **YouTube Integration**: Utilizes React Player to stream YouTube videos for selected tracks.
 
-In the project directory, you can run:
+## Wireframes and Diagrams
+During the planning stage, wireframes created using Figma illustrated the layout, design.
 
-### `npm start`
+## Screenshots
+![Screenshot 1](./src/img/ScreenshotHomePage.png)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+![Screenshot 2](./src/img/Screenshot%20AlbumDetail.png)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+![Screenshot 3](./src/img/ScreenshotTrackDetail.png)
 
-### `npm test`
+## Technical Hurdle
+The challenge of optimizing API calls for real-time updates without compromising website performance was addressed by structuring modular APIs and using Axios for requests.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Learning Experience
+Working extensively with React and React Player was insightful. Utilizing database data from TheAudioDB's API facilitated seamless music exploration.
 
-### `npm run build`
+## Technology Overview
+The project leverages React for frontend development, Axios for API requests, and React Player for YouTube video playback. The database primarily stems from TheAudioDB's free music API.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Where Next? Wishlist / Future Features
+- **Track Favorites**: The upcoming addition of track favorites will enhance user personalization and engagement.
+- **User Profiles**: Introducing user accounts for personalized experiences and storing individual favorites.
+- **Enhanced Styling Options**: Expanding style customization for user preference.
+- **Refined Search and Filters**: Adding advanced search filters for a more detailed music search experience.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+For collaborations, suggestions, or inquiries, please feel free to reach out!
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+This adjustment emphasizes that hand-drawn sketches were used as wireframes to plan the website's structure and layout, even if digital tools like Figma weren't utilized.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

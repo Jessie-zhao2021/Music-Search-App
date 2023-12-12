@@ -42,14 +42,12 @@ function Top50Tracks(){
                         : 
                         'https://www.publicdomainpictures.net/pictures/330000/velka/image-1586763209WNr.jpg'}
                     alt={t.strTrack} 
-                    // key={m.id}
                     onClick={ () => navigateTo(`/track/${t.idTrack}`) }
                   /> 
+                  
                   <div className='album-lable'>
                     { t.strTrack } <br />
-                    <p>{ t.strArtist }</p>
-                     
-                    
+                    <p>{ t.strArtist }</p>                                         
                   </div>
                 </div>
               )

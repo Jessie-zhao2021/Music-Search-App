@@ -18,7 +18,7 @@ export default function AlbumFace({album}) {
     };
 
     return (        
-        <div className='album' key={album.idAlbum}>             
+        <div className={(album.strCountry && album.strCountry.length > 0) ? 'trending-album-item' : 'album' } key={album.idAlbum}>             
             <img 
                 className='poster'
                 src={album.strAlbumThumb ? album.strAlbumThumb : 'https://www.publicdomainpictures.net/pictures/330000/velka/image-1586763209WNr.jpg'}
